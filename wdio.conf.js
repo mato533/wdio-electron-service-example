@@ -13,15 +13,15 @@ const config = {
     {
       'browserName': 'electron',
       'wdio:electronServiceOptions': {
-        appArgs: ['foo', 'bar=baz'],
+        appArgs: ['foo', 'bar=baz', '--no-sandbox'],
         restoreMocks: true,
       },
     },
   ],
   waitforTimeout: 5000,
-  connectionRetryCount: 10,
+  connectionRetryCount: 3,
   connectionRetryTimeout: 30000,
-  logLevel: 'debug',
+  logLevel: 'trace',
   runner: 'local',
   outputDir: 'wdio-logs',
   specs: ['./test/*.spec.ts'],
